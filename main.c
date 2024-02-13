@@ -44,6 +44,7 @@ void readFile(int argc, char **argv){
 
 	bool lineNumberShow = false;
 	int lineCount = 1;
+	char lineStart[256];
 
 	for (int i = 0; i != argc; i++){
 		if (strcmp("-l", argv[i]) == 0){
@@ -56,8 +57,8 @@ void readFile(int argc, char **argv){
 	char buffer[MAX_SIZE];
 	while (fgets(buffer, MAX_SIZE, file)){
 		if (lineNumberShow == true){
-			colorInt("-y", lineCount);
-			printf(" : ");
+			sprintf(lineStart, "%d : ", lineCount);
+			colorChar("-y", lineStart);
 			lineCount++;
 		}
 		printf("%s", buffer);
