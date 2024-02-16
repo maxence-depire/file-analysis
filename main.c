@@ -4,7 +4,9 @@
 
 char version[3] = "0.1";
 
-void colorChar(char code[5], char content[256]){
+
+// COLOR FUNCTION
+void color(char code[5], char content[256]){
 	if (strcmp(code, "-y") == 0){
 		printf("\033[1;33m");	
 	}
@@ -18,27 +20,16 @@ void colorChar(char code[5], char content[256]){
 	printf("\033[0m");
 	return;
 }
+// COLOR FUNCTION
 
-void colorInt(char code[5], int content){
-	if (strcmp(code, "-y") == 0){
-		printf("\033[1;33m");	
-	}
-	else if (strcmp(code, "-r") == 0){
-		printf("\033[1;31m");
-	}
-	else if (strcmp(code, "-rs") == 0){
-		printf("\033[0m");
-	}
-	printf("%d", content);
-	printf("\033[0m");
-	return;
-}
 
+
+// READ FUNCTION
 void readFile(int argc, char **argv){
 	FILE *file;
 	file = fopen(argv[2], "r");
 	if (file == NULL){
-		colorChar("-r", "error in the file open process");
+		color("-r", "error in the file open process");
 		return;
 	}
 
@@ -58,18 +49,21 @@ void readFile(int argc, char **argv){
 	while (fgets(buffer, MAX_SIZE, file)){
 		if (lineNumberShow == true){
 			sprintf(lineStart, "%d : ", lineCount);
-			colorChar("-y", lineStart);
+			color("-y", lineStart);
 			lineCount++;
 		}
 		printf("%s", buffer);
 	}
 	return;
 }
+// READ FUNCTION
 
+
+// ROUTER FUNCTION
 void router(int argc, char **argv){
 	if (argc == 1){
 		printf("for help use : ");
-		colorChar("-r", "cfile -h");
+		color("-r", "cfile -h");
 		return;	
 	}
 	else if (argc > 1){
@@ -83,10 +77,13 @@ void router(int argc, char **argv){
 	}
 	return;
 }
+// ROUTER FUNCTION
 
 
+// MAIN FUNCTION
 int main(int argc, char **argv){
 	router(argc, argv);
-	colorChar("-rs", "");
+	color("-rs", "");
 	return 0;
 }
+// MAIN FUNCTION
