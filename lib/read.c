@@ -7,7 +7,7 @@ void readFile(int argc, char **argv){
 	FILE *file;
 	file = fopen(argv[2], "r");
 	if (file == NULL){
-		color("-r", "error in the file open process");
+		colorString("-r", "error in the file open process");
 		return;
 	}
 
@@ -27,7 +27,7 @@ void readFile(int argc, char **argv){
 	while (fgets(buffer, MAX_SIZE, file)){
 		if (lineNumberShow == true){
 			sprintf(lineStart, "%d : ", lineCount);
-			color("-y", lineStart);
+			colorString("-y", lineStart);
 			lineCount++;
 		}
 		printf("%s", buffer);

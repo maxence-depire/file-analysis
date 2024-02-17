@@ -8,7 +8,7 @@ char version[3] = "0.1";
 void router(int argc, char **argv){
 	if (argc == 1){
 		printf("for help use : ");
-		color("-r", "cfile -h");
+		colorString("-r", "cfile -h");
 		return;	
 	}
 	else if (argc > 1){

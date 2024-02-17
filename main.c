@@ -5,7 +5,7 @@
 // MAIN FUNCTION
 int main(int argc, char **argv){
 	router(argc, argv);
-	color("-rs", "");
+	colorString("-rs", "");
 	return 0;
 }
 // MAIN FUNCTION
