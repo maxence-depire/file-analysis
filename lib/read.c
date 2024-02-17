@@ -2,6 +2,8 @@
 #include <string.h>
 #include <stdbool.h> 
 
+#include "color.c"
+
 // READ FUNCTION
 void readFile(int argc, char **argv){
 
@@ -12,26 +14,26 @@ void readFile(int argc, char **argv){
 	int lineCounter = 0;
 
 	if (file == NULL){
-		colorString("-r", "error in the file open process");
+		printf("%serror in the file open process", RED);
 		return;
 	}
 
 	while (fgets(line, sizeof(line), file) != NULL){
 
-		printf("\033[1;33m%d :\033[0m ", lineCounter++);
+		printf("%s%d : %s", BYEL, lineCounter++, WHT);
 
 		for (int i = 0; line[i] != 0; i++) {
 			if (
 				line[i] == '('
 				|| line[i] == ')'
 			) {
-				colorChar("-r", line[i]);
+				printf("%s%c%s", GRN, line[i], WHT);
 			}
 			else if (
 				line[i] == '{'
 				|| line[i] == '}'
 			) {
-				colorChar("-y", line[i]);
+				printf("%s%c%s", RED, line[i], WHT);
 			}
 			else {
 				printf("%c", line[i]);

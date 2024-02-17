@@ -7,8 +7,7 @@ char version[3] = "0.1";
 // ROUTER FUNCTION
 void router(int argc, char **argv){
 	if (argc == 1){
-		printf("for help use : ");
-		colorString("-r", "cfile -h");
+		printf("for help use : %scfile -h", RED);
 		return;	
 	}
 	else if (argc > 1){
