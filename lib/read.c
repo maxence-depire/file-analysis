@@ -17,15 +17,21 @@ void readFile(int argc, char **argv){
 	}
 
 	while (fgets(line, sizeof(line), file) != NULL){
+
 		printf("\033[1;33m%d :\033[0m ", lineCounter++);
+
 		for (int i = 0; line[i] != 0; i++) {
 			if (
-				line[i] == '{'
-				|| line[i] == '}'
-				|| line[i] == '('
+				line[i] == '('
 				|| line[i] == ')'
 			) {
 				colorChar("-r", line[i]);
+			}
+			else if (
+				line[i] == '{'
+				|| line[i] == '}'
+			) {
+				colorChar("-y", line[i]);
 			}
 			else {
 				printf("%c", line[i]);
