@@ -41,19 +41,19 @@ void readFile(int argc, char **argv){
 		printf("%d : %s", lineCounter, WHT);
 
 		for (int i = 0; line[i] != 0; i++) {
-			if (
-				line[i] == '('
-				|| line[i] == ')'
-			) {
+			if (line[i]=='('||line[i]==')'){
 				printf("%s%c%s", GRN, line[i], WHT);
 			}
-			else if (
-				line[i] == '{'
-				|| line[i] == '}'
-			) {
+			else if (line[i] == '{'||line[i]=='}'){
 				printf("%s%c%s", RED, line[i], WHT);
 			}
-			else {
+			else if (line[i]=='#'){
+				printf("%s%c%s", GRNHB, line[i], WHT);
+			}
+			else if (line[i]=='<'||line[i]=='>'){
+				printf("%s%c%s", REDHB, line[i], WHT);
+			}
+			else{
 				printf("%c", line[i]);
 			}
 		}
