@@ -35,10 +35,8 @@ void readFile(int argc, char **argv){
 		sprintf(lineCounterInString, "%d", lineCounter);
 		size_t lineCounterNumberOfNumber = strlen(lineCounterInString);
 		int target = lineNumberOfNumber - lineCounterNumberOfNumber + 1;
-		if (target > lineCounterNumberOfNumber) { 
-			for (int x = 1; x != target; x++){
-				printf("0");
-			}
+		for (int x = 1; x != target; x++){
+			printf("0");
 		}
 		printf("%d : %s", lineCounter, WHT);
 
