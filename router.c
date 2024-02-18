@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "lib/color.c"
 #include "lib/read.c"
+#include "lib/delete.c"
 
 char version[3] = "0.1";
 
@@ -15,8 +16,11 @@ void router(int argc, char **argv){
 			printf("cfile - version %s", version);
 			printf("\n-r : Read file.");
 		}
-		if (strcmp(argv[1], "-r") == 0){
+		else if (strcmp(argv[1], "-r") == 0){
 			readFile(argc, argv);
+		}
+		else if (strcmp(argv[1], "-d") == 0){
+			deleteLines(argc, argv);
 		}
 	}
 	return;
