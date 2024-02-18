@@ -24,3 +24,7 @@ void deleteLines(int argc, char **argv){
 
     printf("Line %s has been deleted from %s.\n", argv[3], argv[2]);
 }
+
+void deleteFile(int argc, char **argv){
+    remove(argv[2]);
+}

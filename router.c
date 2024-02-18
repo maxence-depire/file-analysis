@@ -22,6 +22,9 @@ void router(int argc, char **argv){
 		else if (strcmp(argv[1], "-d") == 0){
 			deleteLines(argc, argv);
 		}
+		else if (strcmp(argv[1], "-df") == 0){
+			deleteFile(argc, argv);
+		}
 	}
 	return;
 }
