@@ -31,7 +31,7 @@ void readFile(int argc, char **argv){
 	while (fgets(line, sizeof(line), file) != NULL){
 
 		lineCounter++;
-		printf("%s", BYEL);
+		printf("%s", UBLK);
 		sprintf(lineCounterInString, "%d", lineCounter);
 		size_t lineCounterNumberOfNumber = strlen(lineCounterInString);
 		int target = lineNumberOfNumber - lineCounterNumberOfNumber + 1;
