@@ -2,6 +2,7 @@
 #include "lib/color.c"
 #include "lib/read.c"
 #include "lib/delete.c"
+#include "lib/write.c"
 
 char version[3] = "0.1";
 
@@ -24,6 +25,9 @@ void router(int argc, char **argv){
 		}
 		else if (strcmp(argv[1], "-df") == 0){
 			deleteFile(argc, argv);
+		}
+		else if (strcmp(argv[1], "-ml") == 0){
+			writeModifyLine(argc, argv);
 		}
 	}
 	return;
