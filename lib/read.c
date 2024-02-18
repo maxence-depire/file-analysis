@@ -50,7 +50,7 @@ void readFile(int argc, char **argv){
 			else if (line[i] == '['||line[i]==']'){
 				printf("%s%c%s", BLU, line[i], WHT);
 			}
-			else if (line[i]=='#'){
+			else if (line[i]=='#'||line[i]==':'||line[i]==';'){
 				printf("%s%c%s", GRNHB, line[i], WHT);
 			}
 			else if (line[i]=='<'||line[i]=='>'){
